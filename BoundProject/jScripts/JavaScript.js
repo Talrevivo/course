@@ -16,7 +16,11 @@ function openFullscreen() {
     var elem = document.getElementById("PresentationForClass");
     if (elem.requestFullscreen) {
         elem.requestFullscreen();
-    } else if (elem.mozRequestFullScreen) { /* Firefox */
+    }
+    else if (elem.webkitEnterFullScreen) {
+        elem.webkitEnterFullScreen();
+    }
+    else if (elem.mozRequestFullScreen) { /* Firefox */
         elem.mozRequestFullScreen();
     } else if (elem.webkitRequestFullscreen) { /* Chrome, Safari & Opera */
         elem.webkitRequestFullscreen();
